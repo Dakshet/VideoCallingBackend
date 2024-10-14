@@ -19,7 +19,7 @@ const server = createServer(app);
 // Create Instance of server
 const io = new Server(server, {
     cors: {
-        origin: ["http://localhost:3000"],
+        origin: [FRONTEND_URL],
         methods: ["*"],
         credentials: true,
     }
