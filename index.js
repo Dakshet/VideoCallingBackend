@@ -8,6 +8,7 @@ const FRONTEND_URL = process.env.FRONTEND_URL
 // Import
 const { createServer } = require("http")
 const { Server } = require("socket.io")
+const cors = require("cors")
 
 
 // MongoDB connection
@@ -25,6 +26,13 @@ const io = new Server(server, {
     }
 });
 
+
+//cors
+app.use(cors({
+    origin: [FRONTEND_URL],
+    methods: ["*"],
+    credentials: true,
+}))
 
 
 // Middleware
